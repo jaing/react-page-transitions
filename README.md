@@ -24,6 +24,36 @@ module.exports = PageTest;
 
 ```
 
+## Styles (CSS)
+For mobile I suggest to use this so animation will be affecting whole page:
+
+```js
+render: function () {
+	return (
+		<PageContainer className="page-content">
+		  <div>....</div>
+		</PageContainer>
+```
+
+```css
+
+.page-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+// For webkit scroll touch
+.loaded-page.page-content {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+}
+
+```
+
 ## How its working?
 Component renders with display none property. On componentDidMount I'm using Velocity hook to set translateX -100% to the container. Add child component. Set display block. Start VelocityJS animation to translateX 0. After that I'm also adding loaded-page class to container in case you want to use webkit scroll touch.
 
