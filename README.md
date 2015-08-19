@@ -56,8 +56,6 @@ render: function () {
 
 ```
 
-## How to use with react router?
-
 
 ## How its working?
 Component renders with display none property. On componentDidMount I'm using Velocity hook to set translateX -100% to the container. Add child component. Set display block. Start VelocityJS animation to translateX 0. After that I'm also adding loaded-page class to container in case you want to use webkit scroll touch.
