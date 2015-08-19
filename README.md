@@ -23,3 +23,6 @@ var PageTest = React.createClass({
 module.exports = PageTest;
 
 ```
+
+## Info
+Currently module is supporting only one animation. From translateX 100% to translateX 0. If you want to change it feel free to edit index.js file. All Velocity methods will be working fine. 
