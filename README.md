@@ -24,5 +24,8 @@ module.exports = PageTest;
 
 ```
 
+## How its working?
+Component renders with display none property. On componentDidMount I'm using Velocity hook to set translateX -100% to the container. Add child component. Set display block. Start VelocityJS animation to translateX 0. After that I'm also adding loaded-page class to container in case you want to use webkit scroll touch.
+
 ## Info
 Currently module is supporting only one animation. From translateX 100% to translateX 0. If you want to change it feel free to edit index.js file. All Velocity methods will be working fine. 
