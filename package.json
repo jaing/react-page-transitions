@@ -1,0 +1,27 @@
+{
+  "name": "react-page-transitions",
+  "version": "1.0.0",
+  "description": "Page tranistions for ReactJS based on VelocityJS library. Mobile friendly. High performance.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaing/react-page-transitions.git"
+  },
+  "keywords": [
+    "reactjs",
+    "velocityjs",
+    "animations",
+    "transitions",
+    "mobile"
+  ],
+  "author": "Kamil Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaing/react-page-transitions/issues"
+  },
+  "dependencies": {
+    "react": "0.13.x",
+    "velocity-animate": "^1.2.2"
+  },
+  "homepage": "https://github.com/jaing/react-page-transitions#readme"
+}
