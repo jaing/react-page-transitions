@@ -80,7 +80,7 @@ body, .page-content, .content {
 }
 
 // For webkit scroll touch
-.loaded-page.page-content {
+.loaded-page.content {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	overflow-x: hidden;
