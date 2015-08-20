@@ -64,14 +64,14 @@ For mobile I suggest to use this so animation will be affecting whole page:
 ```js
 render: function () {
 	return (
-		<PageContainer className="page-content">
-		  <div>....</div>
+		<PageContainer>
+		  <div className="content">....</div>
 		</PageContainer>
 ```
 
 ```css
 
-.page-content {
+body, .page-content, .content {
 	position: absolute;
 	top: 0;
 	bottom: 0;
