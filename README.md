@@ -25,6 +25,38 @@ var PageTest = React.createClass({
 module.exports = PageTest;
 
 ```
+### Params
+You can use custom parameters to set start and end styles. In example:
+
+```js
+
+render: function () {
+	var startStyles = {
+            'opacity': 0,
+            'scale': .5
+        };
+
+        var endStyles = {
+            'opacity': 1,
+            'scale': 1
+        };
+	return (
+		<PageContainer startStyles={startStyles} endStyles={endStyles}>
+		  <div>....</div>
+		</PageContainer>
+);
+}
+
+module.exports = PageTest;
+
+```
+
+Velocity currently doesn't support multiple hooks in one call so what I'm doing is:
+- iterate through all keys and values in startStyles objects. Hook all of them.
+- Start Velocity animate with endStyles.
+- 
+Without this parameters it will just go with defaults (TranslateX from 100% to 0).
+
 
 ## Styles (CSS)
 For mobile I suggest to use this so animation will be affecting whole page:
@@ -60,5 +92,3 @@ render: function () {
 ## How its working?
 Component renders with display none property. On componentDidMount I'm using Velocity hook to set translateX -100% to the container. Add child component. Set display block. Start VelocityJS animation to translateX 0. After that I'm also adding loaded-page class to container in case you want to use webkit scroll touch.
 
-## Info
-Currently module is supporting only one animation. From translateX 100% to translateX 0. If you want to change it feel free to edit index.js file. All Velocity methods will be working fine. 
