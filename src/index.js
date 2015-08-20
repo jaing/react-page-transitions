@@ -33,11 +33,11 @@ var PageContainer = React.createClass({
 				easing: this.props.easing
 			});
 		}
-    if (this.props.duration) {
-      this.setState({
-        duration: this.props.duration
-      });
-    }
+    		if (this.props.duration) {
+      			this.setState({
+        			duration: this.props.duration
+      			});
+    		}
 	},
 	componentDidMount: function() {
 		var me = this;
