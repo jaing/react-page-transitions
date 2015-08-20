@@ -1,0 +1,16 @@
+body, #content, .page-content, .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.page-1 {
+  background: #ffa97e;
+}
+
+.page-2 {
+  background: #1387ff;
+}
