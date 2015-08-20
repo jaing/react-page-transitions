@@ -1,6 +1,6 @@
 {
   "name": "react-page-transitions",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Page tranistions for ReactJS based on VelocityJS library. Mobile friendly. High performance.",
   "main": "dist/index.js",
   "repository": {
