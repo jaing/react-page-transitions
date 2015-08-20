@@ -52,9 +52,9 @@ module.exports = PageTest;
 ```
 
 Velocity currently doesn't support multiple hooks in one call so what I'm doing is:
-- iterate through all keys and values in startStyles objects. Hook all of them.
+- Iterate through all keys and values in startStyles objects. Hook all of them.
 - Start Velocity animate with endStyles.
-- 
+
 Without this parameters it will just go with defaults (TranslateX from 100% to 0).
 
 
