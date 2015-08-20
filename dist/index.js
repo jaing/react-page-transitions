@@ -3,7 +3,7 @@
 var React = require('react/addons');
 var Velocity = require('velocity-animate');
 
-var PageContainer = React.createClass({
+var PageContainer = React.createClass({displayName: "PageContainer",
 	getInitialState: function() {
 		return {
 			mounted: false,
@@ -50,12 +50,12 @@ var PageContainer = React.createClass({
 	render: function () {
 		var child;
 		if(this.state.mounted){
-			child = (<div>{this.props.children}</div>);
+			child = (React.createElement("div", null, this.props.children));
 		}
 		return (
-			<section className="page-content" style={{display: 'none'}}>
-				{child}
-			</section>
+			React.createElement("section", {className: "page-content", style: {display: 'none'}},
+				child
+			)
 		);
 	}
 });

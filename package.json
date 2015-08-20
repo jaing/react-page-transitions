@@ -1,8 +1,8 @@
 {
   "name": "react-page-transitions",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Page tranistions for ReactJS based on VelocityJS library. Mobile friendly. High performance.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaing/react-page-transitions.git"
@@ -23,5 +23,6 @@
     "react": "0.13.x",
     "velocity-animate": "^1.2.2"
   },
+  "readmeFilename": "README.md",
   "homepage": "https://github.com/jaing/react-page-transitions#readme"
 }
