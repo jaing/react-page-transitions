@@ -33,11 +33,11 @@ var PageContainer = React.createClass({
 				easing: this.props.easing
 			});
 		}
-    		if (this.props.duration) {
-      			this.setState({
-        			duration: this.props.duration
-      			});
-    		}
+        if (this.props.duration) {
+            this.setState({
+                duration: this.props.duration
+            });
+        }
 	},
 	componentDidMount: function() {
 		var me = this;
@@ -50,15 +50,17 @@ var PageContainer = React.createClass({
 		this.setState({ mounted: true });
 		this.getDOMNode().style.display = 'block';
 
+		var options = {
+			duration: this.state.duration,
+			easing: this.state.easing,
+			complete: function () {
+				me.getDOMNode().classList.add('loaded-page');
+			}
+		};
+
 		Velocity(this.getDOMNode(),
 			this.state.endStyles,
-			this.state.easing,
-			this.state.duration,
-			{
-				complete: function () {
-					me.getDOMNode().classList.add('loaded-page');
-				}
-			}
+			options
 		);
 	},
 	render: function () {

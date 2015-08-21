@@ -12,7 +12,9 @@ var PageContainer = React.createClass({displayName: "PageContainer",
 			},
 			endStyles: {
 				'translateX': 0
-			}
+			},
+			easing: 'swing',
+			duration: 400
 		};
 	},
 	componentWillMount: function () {
@@ -24,6 +26,16 @@ var PageContainer = React.createClass({displayName: "PageContainer",
 		if (this.props.endStyles) {
 			this.setState({
 				endStyles: this.props.endStyles
+			});
+		}
+		if (this.props.easing) {
+			this.setState({
+				easing: this.props.easing
+			});
+		}
+		if (this.props.duration) {
+			this.setState({
+				duration: this.props.duration
 			});
 		}
 	},
@@ -38,13 +50,17 @@ var PageContainer = React.createClass({displayName: "PageContainer",
 		this.setState({ mounted: true });
 		this.getDOMNode().style.display = 'block';
 
+		var options = {
+			duration: this.state.duration,
+			easing: this.state.easing,
+			complete: function () {
+				me.getDOMNode().classList.add('loaded-page');
+			}
+		};
+
 		Velocity(this.getDOMNode(),
 			this.state.endStyles,
-			{
-				complete: function () {
-					me.getDOMNode().classList.add('loaded-page');
-				}
-			}
+			options
 		);
 	},
 	render: function () {
