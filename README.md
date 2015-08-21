@@ -6,6 +6,11 @@ Page tranistions for ReactJS based on VelocityJS library. Mobile friendly. High 
 
 ![alt tag](http://i.imgur.com/jAELIYM.gif)
 
+## Change log
+
+1.1.0
+- Additional parameters easing and duration (kudos to @simon-johansson)
+
 ## Getting Started
 
 Install: `npm install react-page-transitions`
