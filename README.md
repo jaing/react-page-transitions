@@ -43,11 +43,20 @@ render: function () {
             'opacity': 1,
             'scale': 1
         };
+        
+        var duration = 1000;
+    	var easing = 'easeInExpo';
+        
 	return (
-		<PageContainer startStyles={startStyles} endStyles={endStyles}>
-		  <div>....</div>
+		<PageContainer
+		        startStyles={startStyles}
+		        endStyles={endStyles}
+		        duration={duration}
+		        easing={easing}
+		      >
+			<div>....</div>
 		</PageContainer>
-);
+	);
 }
 
 module.exports = PageTest;
