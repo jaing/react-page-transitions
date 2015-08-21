@@ -52,6 +52,9 @@ render: function () {
         
         var duration = 1000;
     	var easing = 'easeInExpo';
+    	var callback = function() {
+    		alert('Done');
+    	};
         
 	return (
 		<PageContainer
@@ -59,6 +62,7 @@ render: function () {
 		        endStyles={endStyles}
 		        duration={duration}
 		        easing={easing}
+		        callback={callback}
 		      >
 			<div>....</div>
 		</PageContainer>
