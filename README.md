@@ -10,6 +10,7 @@ Page tranistions for ReactJS based on VelocityJS library. Mobile friendly. High 
 
 1.1.0
 - Additional parameters easing and duration (kudos to @simon-johansson)
+- Additional parameter callback. Fired when animation is completed.
 
 ## Getting Started
 
