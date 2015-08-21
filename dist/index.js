@@ -3,7 +3,7 @@
 var React = require('react/addons');
 var Velocity = require('velocity-animate');
 
-var PageContainer = React.createClass({displayName: "PageContainer",
+var PageContainer = React.createClass({displayName: 'PageContainer',
 	getInitialState: function() {
 		return {
 			mounted: false,
@@ -14,30 +14,30 @@ var PageContainer = React.createClass({displayName: "PageContainer",
 				'translateX': 0
 			},
 			easing: 'swing',
-			duration: 400
+			duration: 400,
+			callback: function() {
+
+			}
 		};
 	},
 	componentWillMount: function () {
+		var obj = {};
 		if (this.props.startStyles) {
-			this.setState({
-				startStyles: this.props.startStyles
-			});
+			obj.startStyles = this.props.startStyles;
 		}
 		if (this.props.endStyles) {
-			this.setState({
-				endStyles: this.props.endStyles
-			});
+			obj.endStyles = this.props.endStyles;
 		}
 		if (this.props.easing) {
-			this.setState({
-				easing: this.props.easing
-			});
+			obj.easing = this.props.easing;
 		}
 		if (this.props.duration) {
-			this.setState({
-				duration: this.props.duration
-			});
+			obj.duration = this.props.duration;
 		}
+		if (typeof this.props.callback === 'function') {
+			obj.callback = this.props.callback;
+		}
+		this.setState(obj);
 	},
 	componentDidMount: function() {
 		var me = this;
@@ -55,6 +55,7 @@ var PageContainer = React.createClass({displayName: "PageContainer",
 			easing: this.state.easing,
 			complete: function () {
 				me.getDOMNode().classList.add('loaded-page');
+				me.state.callback();
 			}
 		};
 
@@ -66,10 +67,10 @@ var PageContainer = React.createClass({displayName: "PageContainer",
 	render: function () {
 		var child;
 		if(this.state.mounted){
-			child = (React.createElement("div", null, this.props.children));
+			child = (React.createElement('div', null, this.props.children));
 		}
 		return (
-			React.createElement("section", {className: "page-content", style: {display: 'none'}},
+			React.createElement('section', {className: 'page-content', style: {display: 'none'}},
 				child
 			)
 		);

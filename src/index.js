@@ -14,30 +14,30 @@ var PageContainer = React.createClass({
 				'translateX': 0
 			},
 			easing: 'swing',
-			duration: 400
+			duration: 400,
+			callback: function() {
+
+			}
 		};
 	},
 	componentWillMount: function () {
+		var obj = {};
 		if (this.props.startStyles) {
-			this.setState({
-				startStyles: this.props.startStyles
-			});
+			obj.startStyles = this.props.startStyles;
 		}
 		if (this.props.endStyles) {
-			this.setState({
-				endStyles: this.props.endStyles
-			});
+			obj.endStyles = this.props.endStyles;
 		}
 		if (this.props.easing) {
-			this.setState({
-				easing: this.props.easing
-			});
+			obj.easing = this.props.easing;
 		}
-        if (this.props.duration) {
-            this.setState({
-                duration: this.props.duration
-            });
-        }
+		if (this.props.duration) {
+			obj.duration = this.props.duration;
+		}
+		if (typeof this.props.callback === 'function') {
+			obj.callback = this.props.callback;
+		}
+		this.setState(obj);
 	},
 	componentDidMount: function() {
 		var me = this;
@@ -55,6 +55,7 @@ var PageContainer = React.createClass({
 			easing: this.state.easing,
 			complete: function () {
 				me.getDOMNode().classList.add('loaded-page');
+				me.state.callback();
 			}
 		};
 
