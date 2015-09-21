@@ -8,6 +8,18 @@ Page tranistions for ReactJS based on VelocityJS library. Mobile friendly. High 
 
 ## Change log
 
+1.2.0
+- You can pass className along with other params
+
+```js
+
+	<PageContainer className="some-test-class">
+	  <div>....</div>
+	</PageContainer>
+
+```
+- Simplifying method responsible for passing props to component.
+
 1.1.0
 - Additional parameters easing and duration (kudos to @simon-johansson)
 - Additional parameter callback. Fired when animation is completed.
