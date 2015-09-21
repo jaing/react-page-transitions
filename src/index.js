@@ -21,23 +21,7 @@ var PageContainer = React.createClass({
 		};
 	},
 	componentWillMount: function () {
-		var obj = {};
-		if (this.props.startStyles) {
-			obj.startStyles = this.props.startStyles;
-		}
-		if (this.props.endStyles) {
-			obj.endStyles = this.props.endStyles;
-		}
-		if (this.props.easing) {
-			obj.easing = this.props.easing;
-		}
-		if (this.props.duration) {
-			obj.duration = this.props.duration;
-		}
-		if (typeof this.props.callback === 'function') {
-			obj.callback = this.props.callback;
-		}
-		this.setState(obj);
+		this.setState(this.props);
 	},
 	componentDidMount: function() {
 		var me = this;
@@ -66,6 +50,7 @@ var PageContainer = React.createClass({
 	},
 	render: function () {
 		var child;
+		var classString = 'page-content ' + this.props.className;
 		if(this.state.mounted){
 			child = (<div>{this.props.children}</div>);
 		}
